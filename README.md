@@ -1,4 +1,4 @@
-# 🏥 Plataforma de Chatbot de Salud - Asistente Virtual de Salud
+# ISUR - Plataforma de Chatbot de Salud - Asistente Virtual de Salud
 
 **Plataforma integral para información y asistencia en salud con chatbot potenciado por IA**
 
