@@ -1,0 +1,330 @@
+/* Estilos personalizados para el editor Tiptap */
+
+/* Barra de herramientas - Asegurar visibilidad */
+.mantine-RichTextEditor-toolbar {
+  background-color: #f8f9fa !important;
+  border-bottom: 1px solid #e9ecef !important;
+  padding: 12px 16px !important;
+  border-radius: 8px 8px 0 0 !important;
+  min-height: 56px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 4px !important;
+  align-items: center !important;
+}
+
+/* Controles de la barra de herramientas */
+.mantine-RichTextEditor-control {
+  border: 1px solid #ced4da !important;
+  border-radius: 6px !important;
+  padding: 8px 10px !important;
+  background: white !important;
+  color: #495057 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.mantine-RichTextEditor-control:hover {
+  background-color: #e9ecef !important;
+  border-color: #adb5bd !important;
+  transform: translateY(-1px) !important;
+}
+
+.mantine-RichTextEditor-control[data-active="true"] {
+  background-color: #FF0048 !important;
+  color: white !important;
+  border-color: #FF0048 !important;
+}
+
+/* Iconos en los controles */
+.mantine-RichTextEditor-control svg {
+  width: 16px !important;
+  height: 16px !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+/* Separadores en la barra */
+.mantine-RichTextEditor-controlsGroup {
+  display: flex !important;
+  gap: 2px !important;
+  margin-right: 8px !important;
+}
+
+/* Contenedor principal del editor */
+.mantine-RichTextEditor-root {
+  border: 1px solid #e9ecef !important;
+  border-radius: 8px !important;
+  background: white !important;
+}
+
+/* Área de contenido del editor */
+.mantine-RichTextEditor-content {
+  min-height: 400px !important;
+  padding: 0 !important;
+  background: white !important;
+  border-radius: 0 0 8px 8px !important;
+}
+
+/* Contenido del editor ProseMirror */
+.ProseMirror {
+  padding: 20px !important;
+  min-height: 380px !important;
+  outline: none !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  cursor: text !important;
+}
+
+/* Evitar que el cursor vaya al final automáticamente */
+.ProseMirror-focused {
+  outline: none !important;
+}
+
+/* Estilos para encabezados - PERMITIR COLORES PERSONALIZADOS */
+.ProseMirror h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem 0;
+  /* Quitar color fijo para permitir colores personalizados */
+}
+
+.ProseMirror h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem 0;
+  /* Quitar color fijo para permitir colores personalizados */
+}
+
+.ProseMirror h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+  /* Quitar color fijo para permitir colores personalizados */
+}
+
+.ProseMirror h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem 0;
+  /* Quitar color fijo para permitir colores personalizados */
+}
+
+.ProseMirror h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem 0;
+  /* Quitar color fijo para permitir colores personalizados */
+}
+
+.ProseMirror h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem 0;
+  /* Quitar color fijo para permitir colores personalizados */
+}
+
+/* Párrafos */
+.ProseMirror p {
+  margin: 0 0 1rem 0;
+  /* Quitar color fijo para permitir colores personalizados */
+}
+
+/* Listas */
+.ProseMirror ul, .ProseMirror ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.ProseMirror li {
+  margin: 0.25rem 0;
+  /* Quitar color fijo para permitir colores personalizados */
+}
+
+/* Enlaces */
+.ProseMirror a {
+  color: #FF0048;
+  text-decoration: underline;
+}
+
+.ProseMirror a:hover {
+  color: #cc0038;
+}
+
+/* Texto en negrita */
+.ProseMirror strong {
+  font-weight: 700;
+  /* Quitar color fijo para permitir colores personalizados */
+}
+
+/* Texto en cursiva */
+.ProseMirror em {
+  font-style: italic;
+  /* Quitar color fijo para permitir colores personalizados */
+}
+
+/* Código inline */
+.ProseMirror code {
+  background-color: #f8f9fa;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875em;
+  color: #e83e8c;
+}
+
+/* Bloques de código */
+.ProseMirror pre {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.ProseMirror pre code {
+  background: none;
+  padding: 0;
+  color: #333;
+}
+
+/* Citas */
+.ProseMirror blockquote {
+  border-left: 4px solid #FF0048;
+  margin: 1rem 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+  background-color: #f8f9fa;
+  font-style: italic;
+}
+
+/* Línea horizontal */
+.ProseMirror hr {
+  border: none;
+  height: 2px;
+  background-color: #e9ecef;
+  margin: 2rem 0;
+}
+
+.ProseMirror h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem 0;
+  color: #FF0048;
+}
+
+.ProseMirror h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+  color: #333;
+}
+
+.ProseMirror h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem 0;
+  color: #333;
+}
+
+/* Estilos para párrafos */
+.ProseMirror p {
+  margin: 0.75rem 0;
+}
+
+/* Estilos para listas */
+.ProseMirror ul,
+.ProseMirror ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.ProseMirror li {
+  margin: 0.25rem 0;
+}
+
+/* Estilos para enlaces */
+.ProseMirror a {
+  color: #FF0048;
+  text-decoration: underline;
+}
+
+.ProseMirror a:hover {
+  color: #e6003f;
+}
+
+/* Estilos para texto en negrita */
+.ProseMirror strong {
+  font-weight: 700;
+  color: #333;
+}
+
+/* Estilos para citas */
+.ProseMirror blockquote {
+  border-left: 4px solid #FF0048;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  background-color: #FFF2F6;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/* Estilos para líneas horizontales */
+.ProseMirror hr {
+  border: none;
+  border-top: 2px solid #FFE8F1;
+  margin: 2rem 0;
+}
+
+/* Placeholder cuando el editor está vacío */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+
+/* Estilos para el toolbar */
+.mantine-RichTextEditor-toolbar {
+  border-bottom: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+}
+
+/* Estilos para los botones del toolbar */
+.mantine-RichTextEditor-control {
+  border-radius: 4px;
+}
+
+.mantine-RichTextEditor-control:hover {
+  background-color: #e9ecef;
+}
+
+.mantine-RichTextEditor-control[data-active] {
+  background-color: #FF0048;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ProseMirror {
+    padding: 0.75rem;
+    font-size: 16px; /* Evita zoom en iOS */
+  }
+  
+  .ProseMirror h1 {
+    font-size: 1.75rem;
+  }
+  
+  .ProseMirror h2 {
+    font-size: 1.375rem;
+  }
+}

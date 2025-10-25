@@ -1,0 +1,180 @@
+/* Footer Styles - Azul Institucional Plano */
+.footer {
+  background: #1B436B; /* Azul institucional plano */
+  color: white;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Enlaces simples de acceso rápido */
+.simpleLink {
+  color: #ffffff !important;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.simpleLink:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Divisor simple */
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 2rem 0;
+}
+
+/* Footer inferior */
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Animación del corazón */
+.heart {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.heart {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Estilos responsivos para imágenes del footer */
+.footerImage {
+  max-width: 100%;
+  max-height: 70px; /* Tamaño por defecto para desktop - reducido para 4 imágenes */
+  height: auto !important;
+  width: auto !important;
+  display: block;
+  margin: 0 !important;
+  object-fit: contain;
+}
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+  .footerImage {
+    max-height: 80px;
+  }
+}
+
+/* Tablet y mobile large */
+@media (max-width: 768px) {
+  .footerImage {
+    max-height: 50px;
+    max-width: 100%;
+  }
+}
+
+/* Mobile medium */
+@media (max-width: 640px) {
+  .footerImage {
+    max-height: 45px;
+    max-width: 100%;
+  }
+}
+
+/* Mobile small */
+@media (max-width: 480px) {
+  .footerImage {
+    max-height: 40px;
+    max-width: 100%;
+  }
+}
+
+/* Mobile very small */
+@media (max-width: 360px) {
+  .footerImage {
+    max-height: 35px;
+    max-width: 100%;
+  }
+}
+
+.isurLogo {
+  max-width: 100%;
+  max-height: 55px; /* Tamaño por defecto para desktop */
+  height: auto !important;
+  width: auto !important;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+  .isurLogo {
+    max-height: 60px;
+  }
+}
+
+/* Tablet y mobile large */
+@media (max-width: 768px) {
+  .isurLogo {
+    max-height: 45px;
+    max-width: 100%;
+  }
+}
+
+/* Mobile medium */
+@media (max-width: 640px) {
+  .isurLogo {
+    max-height: 40px;
+    max-width: 100%;
+  }
+}
+
+/* Mobile small */
+@media (max-width: 480px) {
+  .isurLogo {
+    max-height: 35px;
+    max-width: 100%;
+  }
+}
+
+/* Mobile very small */
+@media (max-width: 360px) {
+  .isurLogo {
+    max-height: 30px;
+    max-width: 100%;
+  }
+}
+
+/* Estilos responsivos para enlaces simples */
+@media (max-width: 768px) {
+  .simpleLink {
+    padding: 6px 8px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .simpleLink {
+    padding: 4px 6px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .simpleLink {
+    transition: none;
+  }
+  
+  .heart {
+    animation: none;
+  }
+}

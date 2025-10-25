@@ -1,0 +1,410 @@
+/* Interactive Map Styles */
+.container {
+  min-height: calc(100vh - 120px);
+  position: relative;
+  z-index: 1;
+}
+
+.mapContainer {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Fix z-index para que el mapa no tape el navbar ni modals */
+.mapWrapper :global(.leaflet-container) {
+  z-index: 1 !important;
+}
+
+.mapWrapper :global(.leaflet-control-container) {
+  z-index: 100 !important;
+}
+
+.mapWrapper :global(.leaflet-popup) {
+  z-index: 200 !important;
+}
+
+.mapWrapper :global(.leaflet-marker-icon) {
+  z-index: 50 !important;
+}
+
+.mapWrapper :global(.leaflet-shadow) {
+  z-index: 25 !important;
+}
+
+/* Asegurar que todos los elementos de Leaflet estén por debajo de modals */
+.mapWrapper :global(.leaflet-pane) {
+  z-index: 1 !important;
+}
+
+.mapWrapper :global(.leaflet-map-pane) {
+  z-index: 1 !important;
+}
+
+.mapWrapper :global(.leaflet-tile-pane) {
+  z-index: 1 !important;
+}
+
+.mapWrapper :global(.leaflet-overlay-pane) {
+  z-index: 1 !important;
+}
+
+.mapPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px dashed #ced4da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.centerCard {
+  transition: all 0.2s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.centerCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #4A90E2;
+}
+
+/* Search bar responsive styles */
+.searchContainer {
+  width: 100%;
+}
+
+.searchGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 200px;
+}
+
+.searchActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mapWrapper {
+    height: 350px;
+  }
+  
+  .container {
+    padding: 1rem 0.5rem;
+  }
+
+  .searchGroup {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .searchInput {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .searchActions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .searchActions > * {
+    flex: 1;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapWrapper {
+    height: 300px;
+  }
+  
+  .centerCard {
+    padding: 0.75rem;
+  }
+  
+  .container {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .searchActions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .searchActions > * {
+    width: 100%;
+    min-width: unset;
+  }
+
+  /* Stack buttons vertically on very small screens */
+  .searchActions button {
+    justify-content: center;
+  }
+
+  /* Hide text on small buttons for better spacing */
+  .mobileFilterBtn {
+    padding: 8px !important;
+  }
+}
+
+/* Additional responsive utilities */
+.hideOnMobile {
+  display: inline;
+}
+
+.showOnMobile {
+  display: none;  
+}
+
+@media (max-width: 480px) {
+  .hideOnMobile {
+    display: none !important;
+  }
+  
+  .showOnMobile {
+    display: inline !important;
+  }
+}
+
+/* Filter animations */
+.filterChip {
+  transition: all 0.2s ease;
+}
+
+.filterChip:hover {
+  transform: scale(1.02);
+}
+
+/* Map marker styles for when real map is implemented */
+.mapMarker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mapMarker:hover {
+  transform: scale(1.1);
+  z-index: 1000;
+}
+
+.mapMarkerPublico {
+  background: #1976d2;
+}
+
+.mapMarkerPrivado {
+  background: #f57c00;
+}
+
+.mapMarkerOng {
+  background: #388e3c;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+.scrollArea {
+  scrollbar-width: thin;
+  scrollbar-color: #ced4da transparent;
+}
+
+.scrollArea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollArea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollArea::-webkit-scrollbar-thumb {
+  background: #ced4da;
+  border-radius: 3px;
+}
+
+.scrollArea::-webkit-scrollbar-thumb:hover {
+  background: #adb5bd;
+}
+
+/* Animation for cards appearing */
+.centerCard {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Active filter indication */
+.activeFilter {
+  background: #4A90E2;
+  color: white;
+}
+
+/* Map controls */
+.mapControls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mapControl {
+  background: white;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mapControl:hover {
+  background: #f8f9fa;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Service badge styles */
+.serviceBadge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Info popup for map markers */
+.markerPopup {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e9ecef;
+  max-width: 250px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.markerPopup .title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #343a40;
+}
+
+.markerPopup .address {
+  color: #6c757d;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.markerPopup .services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.markerPopup .actions {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+/* Distance indicator */
+.distanceIndicator {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* No results state */
+.noResults {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6c757d;
+}
+
+.noResults .icon {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Search suggestions */
+.searchSuggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ced4da;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.searchSuggestion {
+  padding: 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f3f4;
+  transition: background-color 0.2s ease;
+}
+
+.searchSuggestion:hover {
+  background: #f8f9fa;
+}
+
+.searchSuggestion:last-child {
+  border-bottom: none;
+}

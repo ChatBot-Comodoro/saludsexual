@@ -1,0 +1,107 @@
+/* Estilos base para ArticleCard */
+.defaultCard {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.defaultCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.compactCard {
+  transition: all 0.2s ease;
+}
+
+.compactCard:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.adminCard {
+  border-left: 4px solid var(--mantine-color-blue-5);
+}
+
+.adminCard:hover {
+  border-left-color: var(--mantine-color-blue-6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido HTML dentro de la tarjeta */
+.htmlContent {
+  line-height: 1.6;
+}
+
+.htmlContent h1,
+.htmlContent h2,
+.htmlContent h3,
+.htmlContent h4,
+.htmlContent h5,
+.htmlContent h6 {
+  margin-bottom: 1rem;
+  color: var(--mantine-color-text);
+}
+
+.htmlContent p {
+  margin-bottom: 1rem;
+}
+
+.htmlContent ul,
+.htmlContent ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.htmlContent blockquote {
+  border-left: 4px solid var(--mantine-color-blue-5);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--mantine-color-dimmed);
+}
+
+.htmlContent code {
+  background-color: var(--mantine-color-gray-1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875em;
+}
+
+.htmlContent pre {
+  background-color: var(--mantine-color-gray-1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.htmlContent img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .defaultCard,
+  .adminCard {
+    padding: 1rem;
+  }
+  
+  .compactCard {
+    padding: 0.75rem;
+  }
+}
+
+/* Estados especiales */
+.draftCard {
+  opacity: 0.8;
+  border-left: 4px solid var(--mantine-color-yellow-5);
+}
+
+.archivedCard {
+  opacity: 0.6;
+  border-left: 4px solid var(--mantine-color-gray-5);
+}

@@ -1,0 +1,639 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Typography Variables */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  
+  /* Typography */
+  --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-secondary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Brand Colors */
+  --color-primary: #1B436B;
+  --color-primary-light: #d9e2ec;
+  --color-primary-dark: #122f4d;
+  --color-primary-contrast: #ffffff;
+  
+  /* Dashboard Color Palette - Unified System */
+  --dashboard-primary: #1B436B;        /* Color principal de marca */
+  --dashboard-primary-light: #f0f4f8;  /* Fondos suaves */
+  --dashboard-primary-medium: #bcccdc; /* Elementos secundarios */
+  --dashboard-primary-dark: #122f4d;   /* Textos de énfasis */
+  
+  /* Analytics Colors - Semantic Palette */
+  --analytics-success: #28a745;        /* Verde para métricas positivas */
+  --analytics-warning: #ffc107;        /* Amarillo para alertas */
+  --analytics-info: #17a2b8;          /* Azul cyan para información */
+  --analytics-secondary: #6c757d;      /* Gris para datos secundarios */
+  
+  /* ADMIN DASHBOARD VARIABLES - Sistema independiente */
+  --admin-font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --admin-font-secondary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Admin Dashboard Colors */
+  --admin-text-primary: #2d3748;        /* Gris oscuro casi negro - títulos principales */
+  --admin-text-secondary: #4a5568;      /* Gris medio - texto secundario */
+  --admin-text-muted: #718096;          /* Gris claro - texto deshabilitado */
+  --admin-bg-main: #f8f9fa;             /* Fondo principal del dashboard */
+  --admin-bg-card: #ffffff;             /* Fondo de tarjetas */
+  --admin-bg-section: #f8f9fa;          /* Fondo de secciones */
+  --admin-border-light: #e2e8f0;        /* Bordes suaves */
+  --admin-border-medium: #cbd5e0;       /* Bordes normales */
+  
+  /* Admin Dashboard Brand Colors */
+  --admin-brand-primary: #1B436B;       /* Color de marca principal */
+  --admin-brand-light: #f0f4f8;         /* Variante clara */
+  --admin-brand-dark: #122f4d;          /* Variante oscura */
+  
+  /* Dashboard Backgrounds */
+  --dashboard-bg-main: #f8f9fa;        /* Fondo principal */
+  --dashboard-bg-card: #ffffff;        /* Fondo de tarjetas */
+  --dashboard-bg-section: #f8f9fa;     /* Fondo de secciones */
+  
+  /* Text Colors */
+  --text-primary: #1B436B;             /* Títulos principales */
+  --text-secondary: #6c757d;           /* Texto secundario */
+  --text-muted: #adb5bd;              /* Texto deshabilitado */
+  --text-contrast: #ffffff;            /* Texto sobre fondos oscuros */
+  
+  /* Border and Shadows */
+  --border-light: #e9ecef;             /* Bordes suaves */
+  --border-medium: #dee2e6;            /* Bordes normales */
+  --shadow-light: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow-medium: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* Global Typography */
+html {
+  font-family: var(--font-secondary);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Headings use Montserrat */
+h1, h2, h3, h4, h5, h6,
+.heading,
+.title {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Specific heading weights */
+h1 {
+  font-weight: 800;  /* Extra Bold */
+}
+
+h2 {
+  font-weight: 800;  /* Extra Bold */
+}
+
+h3 {
+  font-weight: 700;  /* Bold */
+}
+
+h4, h5, h6 {
+  font-weight: 600;  /* SemiBold */
+}
+
+/* Button and interactive elements */
+button,
+.button,
+.btn {
+  font-family: var(--font-primary);
+  font-weight: 500;
+}
+
+/* Navigation elements */
+nav,
+.nav,
+.navbar {
+  font-family: var(--font-primary);
+}
+
+/* Body text and paragraphs use Montserrat */
+p,
+.text,
+.description,
+.content {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+}
+
+/* Font weight utilities */
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+/* Font family utilities */
+.font-primary {
+  font-family: var(--font-primary);
+}
+
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+
+/* Brand color utilities */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.text-primary-light {
+  color: var(--color-primary-light);
+}
+
+.bg-primary-light {
+  background-color: var(--color-primary-light);
+}
+
+.text-primary-dark {
+  color: var(--color-primary-dark);
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+
+/* Títulos principales de página - usar color principal */
+.page-title {
+  color: var(--color-primary) !important;
+  font-family: var(--font-primary);
+  font-weight: 800;
+}
+
+/* Títulos de sección importantes */
+.section-title {
+  color: var(--color-primary) !important;
+  font-family: var(--font-primary);
+  font-weight: 700;
+}
+
+/* ADMIN DASHBOARD TYPOGRAPHY SYSTEM - Sistema independiente */
+.admin-dashboard-title {
+  font-family: var(--admin-font-primary) !important;
+  font-weight: 700 !important;
+  color: var(--admin-text-primary) !important;
+}
+
+.admin-dashboard-subtitle {
+  font-family: var(--admin-font-primary) !important;
+  font-weight: 600 !important;
+  color: var(--admin-text-primary) !important;
+}
+
+.admin-dashboard-section-title {
+  font-family: var(--admin-font-primary) !important;
+  font-weight: 500 !important;
+  color: var(--admin-text-primary) !important;
+}
+
+.admin-dashboard-text {
+  font-family: var(--admin-font-secondary) !important;
+  color: var(--admin-text-secondary) !important;
+}
+
+.admin-dashboard-text-muted {
+  font-family: var(--admin-font-secondary) !important;
+  color: var(--admin-text-muted) !important;
+}
+
+/* Admin Dashboard Color Classes */
+.admin-text-primary {
+  color: var(--admin-text-primary) !important;
+}
+
+.admin-bg-primary {
+  background-color: var(--admin-brand-primary) !important;
+}
+
+.admin-bg-card {
+  background-color: var(--admin-bg-card) !important;
+}
+
+/* Dashboard Typography System - ORIGINAL (para el sitio web) */
+.dashboard-title {
+  font-family: var(--font-primary) !important;
+  font-weight: 800 !important;
+  color: var(--dashboard-primary) !important;
+}
+
+.dashboard-subtitle {
+  font-family: var(--font-primary) !important;
+  font-weight: 700 !important;
+  color: var(--dashboard-primary) !important;
+}
+
+.dashboard-section-title {
+  font-family: var(--font-primary) !important;
+  font-weight: 600 !important;
+  color: var(--dashboard-primary) !important;
+}
+
+.dashboard-text {
+  font-family: var(--font-secondary) !important;
+  color: var(--text-secondary) !important;
+}
+
+.dashboard-text-muted {
+  font-family: var(--font-secondary) !important;
+  color: var(--text-muted) !important;
+}
+
+/* Dashboard Color Classes - ORIGINAL (para el sitio web) */
+.dashboard-primary {
+  color: var(--dashboard-primary) !important;
+}
+
+.dashboard-bg-primary {
+  background-color: var(--dashboard-primary) !important;
+}
+
+.dashboard-bg-light {
+  background-color: var(--dashboard-primary-light) !important;
+}
+
+.analytics-success {
+  color: var(--analytics-success) !important;
+}
+
+.analytics-warning {
+  color: var(--analytics-warning) !important;
+}
+
+.analytics-info {
+  color: var(--analytics-info) !important;
+}
+
+.analytics-bg-success {
+  background-color: var(--analytics-success) !important;
+}
+
+.analytics-bg-warning {
+  background-color: var(--analytics-warning) !important;
+}
+
+.analytics-bg-info {
+  background-color: var(--analytics-info) !important;
+}
+
+/* Override para Mantine Title components principales */
+.mantine-Title-root[data-order="1"] {
+  font-family: var(--font-primary) !important;
+  color: var(--dashboard-primary) !important;
+  font-weight: 800 !important;
+}
+
+.mantine-Title-root[data-order="2"] {
+  font-family: var(--font-primary) !important;
+  color: var(--dashboard-primary) !important;
+  font-weight: 800 !important;
+}
+
+.mantine-Title-root[data-order="3"] {
+  font-family: var(--font-primary) !important;
+  color: var(--dashboard-primary) !important;
+  font-weight: 700 !important;
+}
+
+.mantine-Title-root[data-order="4"] {
+  font-family: var(--font-primary) !important;
+  color: var(--dashboard-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* ADMIN PANEL - Clases específicas para el panel administrativo SOLAMENTE */
+.admin-panel-title {
+  font-family: var(--admin-font-primary) !important;
+  font-weight: 600 !important;
+  color: var(--admin-text-primary) !important;
+}
+
+.admin-panel-subtitle {
+  font-family: var(--admin-font-primary) !important;
+  font-weight: 500 !important;
+  color: var(--admin-text-primary) !important;
+}
+
+/* Reglas específicas para forzar títulos del admin panel */
+.admin-panel-title.mantine-Title-root {
+  font-family: var(--admin-font-primary) !important;
+  font-weight: 600 !important;
+  color: var(--admin-text-primary) !important;
+}
+
+.admin-panel-subtitle.mantine-Title-root {
+  font-family: var(--admin-font-primary) !important;
+  font-weight: 500 !important;
+  color: var(--admin-text-primary) !important;
+}
+
+/* Especificidad máxima para títulos de admin */
+.mantine-Title-root.admin-panel-title {
+  font-family: var(--admin-font-primary) !important;
+  font-weight: 600 !important;
+  color: var(--admin-text-primary) !important;
+}
+
+.mantine-Title-root.admin-panel-subtitle {
+  font-family: var(--admin-font-primary) !important;
+  font-weight: 500 !important;
+  color: var(--admin-text-primary) !important;
+}
+
+/* Reglas ultra específicas para asegurar que se apliquen */
+.mantine-Title-root[data-order="3"].admin-panel-title,
+.mantine-Title-root[data-order="4"].admin-panel-subtitle,
+.mantine-Title-root[data-order="5"].admin-panel-subtitle {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  color: #2d3748 !important;
+  font-weight: 600 !important;
+}
+
+/* Dashboard Card Styles - ORIGINAL (para el sitio web) */
+.dashboard-card {
+  background-color: var(--dashboard-bg-card) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: var(--shadow-light) !important;
+}
+
+.dashboard-section {
+  background-color: var(--dashboard-bg-section) !important;
+}
+
+/* Analytics Badge Styles */
+.analytics-badge-success {
+  background-color: var(--analytics-success) !important;
+  color: var(--text-contrast) !important;
+}
+
+.analytics-badge-warning {
+  background-color: var(--analytics-warning) !important;
+  color: var(--dashboard-primary) !important;
+}
+
+.analytics-badge-info {
+  background-color: var(--analytics-info) !important;
+  color: var(--text-contrast) !important;
+}
+
+/* Blue Gradient Card Styles - Override ALL title colors */
+.blue-gradient-card .mantine-Title-root {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.blue-gradient-card .mantine-Text-root {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.blue-gradient-card h1,
+.blue-gradient-card h2,
+.blue-gradient-card h3,
+.blue-gradient-card h4,
+.blue-gradient-card h5,
+.blue-gradient-card h6 {
+  color: white !important;
+}
+
+.blue-gradient-card .mantine-Title-root[data-order="4"] {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+/* Leaflet Map z-index fixes */
+.leaflet-container {
+  z-index: 1 !important;
+}
+
+.leaflet-control-container {
+  z-index: 100 !important;
+}
+
+.leaflet-popup {
+  z-index: 200 !important;
+}
+
+.leaflet-marker-icon {
+  z-index: 50 !important;
+}
+
+.leaflet-shadow {
+  z-index: 25 !important;
+}
+
+.leaflet-tile-pane {
+  z-index: 1 !important;
+}
+
+.leaflet-overlay-pane {
+  z-index: 10 !important;
+}
+
+/* Ensure map doesn't overlap navbar */
+.mantine-AppShell-main {
+  position: relative;
+  z-index: 2;
+}
+
+.mantine-AppShell-header {
+  z-index: 1000 !important;
+}
+
+/* Fix para Drawer y Modal de Mantine - deben aparecer por encima del navbar */
+.mantine-Drawer-root {
+  z-index: 2000 !important;
+  pointer-events: auto !important;
+}
+
+.mantine-Drawer-overlay {
+  z-index: 1999 !important;
+  pointer-events: auto !important;
+}
+
+.mantine-Drawer-content {
+  z-index: 2001 !important;
+  pointer-events: auto !important;
+}
+
+.mantine-Drawer-inner {
+  z-index: 2001 !important;
+  pointer-events: auto !important;
+}
+
+.mantine-Drawer-header {
+  z-index: 2002 !important;
+  pointer-events: auto !important;
+}
+
+.mantine-Drawer-body {
+  z-index: 2001 !important;
+  pointer-events: auto !important;
+}
+
+.mantine-Modal-root {
+  z-index: 3000 !important;
+  pointer-events: auto !important;
+}
+
+.mantine-Modal-overlay {
+  z-index: 2999 !important;
+  pointer-events: auto !important;
+}
+
+.mantine-Modal-content {
+  z-index: 3000 !important;
+  pointer-events: auto !important;
+}
+
+.mantine-Modal-header {
+  z-index: 3001 !important;
+  pointer-events: auto !important;
+}
+
+.mantine-Modal-body {
+  z-index: 3000 !important;
+  pointer-events: auto !important;
+}
+
+/* Modal de confirmación específico */
+.delete-confirmation-modal .mantine-Modal-inner {
+  z-index: 9999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  pointer-events: auto !important;
+}
+
+.delete-confirmation-modal .mantine-Modal-overlay {
+  z-index: 9998 !important;
+  position: fixed !important;
+  pointer-events: auto !important;
+}
+
+.delete-confirmation-modal .mantine-Modal-modal {
+  z-index: 10000 !important;
+  position: relative !important;
+  pointer-events: auto !important;
+}
+
+.delete-confirmation-modal .mantine-Modal-header {
+  z-index: 10001 !important;
+  pointer-events: auto !important;
+}
+
+.delete-confirmation-modal .mantine-Modal-body {
+  z-index: 10000 !important;
+  pointer-events: auto !important;
+}
+
+/* iOS Safari specific fixes for navbar visibility */
+@supports (-webkit-touch-callout: none) {
+  /* Force hardware acceleration on all Mantine AppShell components */
+  .mantine-AppShell-root {
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+  }
+  
+  .mantine-AppShell-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 100 !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+  }
+  
+  .mantine-AppShell-main {
+    padding-top: 60px !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  
+  /* Fix for burger menu visibility */
+  .mantine-Burger-root {
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    -webkit-tap-highlight-color: rgba(27, 67, 107, 0.2) !important;
+    -webkit-touch-callout: none !important;
+    touch-action: manipulation !important;
+    z-index: 102 !important;
+  }
+}
+
+/* Additional iOS specific viewport fixes */
+@media screen and (max-device-width: 896px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* iPhone specific */
+  body {
+    -webkit-text-size-adjust: none !important;
+    -webkit-touch-callout: none !important;
+  }
+  
+  .mantine-AppShell-header {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 100 !important;
+  }
+}

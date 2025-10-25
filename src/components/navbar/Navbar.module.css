@@ -1,0 +1,505 @@
+/* Navbar Styles - iOS Safari Compatible */
+.header {
+  background-color: white !important;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 100 !important;
+  transition: box-shadow 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  width: 100% !important;
+  height: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  min-height: 60px !important;
+  /* iOS specific fixes */
+  -webkit-transform: translateZ(0) !important;
+  transform: translateZ(0) !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 100 !important;
+    background: white !important;
+    background-color: white !important;
+    display: flex !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+}
+
+/* WebKit specific - Older iOS versions */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .header {
+    position: fixed !important;
+    top: 0 !important; 
+    left: 0 !important;
+    right: 0 !important;
+    background: white !important;
+    background-color: white !important;
+    display: flex !important;
+    z-index: 100 !important;
+  }
+}
+
+.header:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.inner {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  height: 100% !important;
+  width: 100% !important;
+  background: transparent !important;
+}
+
+/* Logo Section */
+.logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem;
+  text-decoration: none;
+  flex-shrink: 0 !important;
+  min-width: fit-content !important;
+  z-index: 101 !important;
+  position: relative !important;
+  /* iOS specific fixes */
+  -webkit-transform: translateZ(0) !important;
+  transform: translateZ(0) !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #1B436B 0%, #122f4d 100%);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(27, 67, 107, 0.3);
+  flex-shrink: 0;
+}
+
+.logoIcon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(27, 67, 107, 0.4);
+}
+
+/* Navigation */
+.desktopNav {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabletNav {
+  display: flex;
+  flex: 1;
+  margin: 0 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tabletNav::-webkit-scrollbar {
+  display: none;
+}
+
+.tabletNavInner {
+  display: flex;
+  min-width: max-content;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Link Styles */
+.link {
+  color: #495057;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.link:hover {
+  color: #1B436B;
+  background-color: #f8f9fa;
+  transform: translateY(-1px);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #1B436B, #122f4d);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.link:hover::after {
+  width: 80%;
+}
+
+.linkActive {
+  color: #1B436B;
+  background-color: #f8f9fa;
+}
+
+.linkActive::after {
+  width: 80%;
+}
+
+.tabletLink {
+  color: #495057;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tabletLink:hover {
+  color: #1B436B;
+  background-color: #f8f9fa;
+}
+
+/* Right Section */
+.rightSection {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.5rem;
+  flex-shrink: 0 !important;
+  min-width: 60px !important;
+  height: 60px !important;
+  z-index: 101 !important;
+  position: relative !important;
+  /* iOS specific fixes */
+  -webkit-transform: translateZ(0) !important;
+  transform: translateZ(0) !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.socialIcon {
+  color: #6c757d;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.socialIcon:hover {
+  color: #1B436B;
+  transform: translateY(-2px);
+  background-color: #f8f9fa;
+}
+
+.burger {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease;
+  height: 44px !important;
+  width: 44px !important;
+  min-height: 44px !important;
+  min-width: 44px !important;
+  z-index: 102 !important;
+  position: relative !important;
+  background-color: transparent !important;
+  border: 2px solid #1B436B !important;
+  /* iOS touch optimization */
+  -webkit-tap-highlight-color: rgba(27, 67, 107, 0.2) !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  touch-action: manipulation !important;
+  /* Hardware acceleration */
+  -webkit-transform: translateZ(0) !important;
+  transform: translateZ(0) !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+}
+
+.burger:hover {
+  background-color: rgba(27, 67, 107, 0.1);
+}
+
+/* Mobile Drawer */
+.drawer {
+  padding: 1rem;
+}
+
+.mobileLink {
+  color: #495057;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: block;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  /* Mejorar interacciones en móvil */
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  pointer-events: auto;
+  /* Prevenir problemas de rendering */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.mobileLink:hover {
+  color: #1B436B;
+  background-color: #f8f9fa;
+  transform: translateY(-1px);
+}
+
+.mobileLink::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #1B436B, #122f4d);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.mobileLink:hover::after {
+  width: 80%;
+}
+
+.mobileLinkActive {
+  color: #1B436B;
+  background-color: #f8f9fa;
+}
+
+.mobileLinkActive::after {
+  width: 80%;
+}
+
+.mobileSocial {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Responsive adjustments using CSS only */
+/* Fixed navbar compensation - iOS fix */
+.header ~ :global(.mantine-AppShell-main) {
+  padding-top: 60px !important;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .header ~ :global(.mantine-AppShell-main) {
+    padding-top: 60px !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .burger {
+    display: flex !important;
+    z-index: 102 !important;
+    position: relative !important;
+    background-color: transparent !important;
+    border: 2px solid #1B436B !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    /* iOS touch optimization */
+    -webkit-tap-highlight-color: rgba(27, 67, 107, 0.2) !important;
+    touch-action: manipulation !important;
+  }
+  
+  .rightSection {
+    display: flex !important;
+    min-width: 60px !important;
+    z-index: 101 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    height: 55px;
+    padding: 0 0.75rem;
+    justify-content: space-between !important;
+  }
+  
+  .logoIcon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .burger {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 1001 !important;
+    position: relative !important;
+    pointer-events: auto !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    background-color: transparent !important;
+    border: 2px solid #1B436B !important;
+    border-radius: 8px !important;
+    /* Mejoras para touch en móviles */
+    -webkit-tap-highlight-color: rgba(27, 67, 107, 0.2) !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    touch-action: manipulation !important;
+  }
+  
+  .rightSection {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-width: 54px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* Estilos específicos para iOS Safari */
+@supports (-webkit-appearance: none) and (not (appearance: none)) {
+  @media (max-width: 767px) {
+    .burger {
+      appearance: none !important;
+      -webkit-appearance: none !important;
+      -webkit-tap-highlight-color: rgba(27, 67, 107, 0.2) !important;
+      -webkit-touch-callout: none !important;
+      transform: translateZ(0) !important;
+      -webkit-transform: translateZ(0) !important;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .inner {
+    padding: 0 3rem;
+    height: 70px;
+  }
+  
+  .desktopNav {
+    gap: 2rem;
+  }
+  
+  .link {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* Drawer Styles - Fix white space issue */
+.drawer {
+  position: fixed !important;
+  z-index: 2000 !important;
+  /* Mejorar interacciones */
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
+}
+
+/* Ensure drawer doesn't create extra space when closed */
+.drawer :global(.mantine-Drawer-root) {
+  position: fixed !important;
+  pointer-events: none;
+  z-index: 2000 !important;
+  /* Prevenir blur en iOS */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.drawer :global(.mantine-Drawer-root[data-opened="true"]) {
+  pointer-events: auto;
+  z-index: 2000 !important;
+}
+
+.drawer :global(.mantine-Drawer-content) {
+  position: fixed !important;
+  /* Asegurar interacciones */
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+  z-index: 2001 !important;
+}
+
+.drawer :global(.mantine-Drawer-inner) {
+  z-index: 2001 !important;
+  pointer-events: auto !important;
+}
+
+.drawer :global(.mantine-Drawer-header) {
+  z-index: 2002 !important;
+  pointer-events: auto !important;
+  position: relative !important;
+}
+
+.drawer :global(.mantine-Drawer-body) {
+  /* Asegurar que el body sea completamente interactuable */
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+  z-index: 2001 !important;
+  position: relative !important;
+}
+
+.drawer :global(.mantine-Drawer-overlay) {
+  /* Asegurar que el overlay no interfiera */
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  z-index: 1999 !important;
+  /* Prevenir problemas de blur en iOS */
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Prevent drawer from affecting document flow */
+.drawer :global(.mantine-Drawer-root:not([data-opened="true"])) {
+  display: none !important;
+}

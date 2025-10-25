@@ -1,0 +1,21 @@
+// Exportar todos los iconos personalizados
+export { default as AmbulanciaIcon } from './AmbulanciaIcon';
+export { default as PruebaEmbarazoIcon } from './Prueba-EmbarazoIcon';
+export { default as ExamenSaludIcon } from './ExamenSaludIcon';
+export { default as HivIcon } from './HivIcon';
+export { default as LaboratorioIcon } from './LaboratorioIcon';
+export { default as MedicinaIcon } from './MedicinaIcon';
+export { default as PildorasIcon } from './PildorasIcon';
+export { default as PreservativoIcon } from './PreservativoIcon';
+export { default as SangreIcon } from './SangreIcon';
+export { default as TestIcon } from './TestIcon';
+export { default as VacunaIcon } from './VacunaIcon';
+export { default as Vacuna2Icon } from './Vacuna2Icon';
+export { default as VirusIcon } from './VirusIcon';
+export { default as EmbarazoIcon } from './EmbarazoIcon';
+export { default as HepatitisIcon } from './HepatitisIcon';
+export { default as BalanzaIcon } from './BalanzaIcon';
+export { default as ApoyoIcon } from './ApoyoIcon';
+export { default as MapaIcon } from './MapaIcon';
+export { default as HospitalPinIcon } from './HospitalPinIcon';
+export { default as PrevencionCombinadaIcon } from './PrevencionCombinadaIcon';
