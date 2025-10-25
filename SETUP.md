@@ -5,7 +5,7 @@
 ### 1. Clonar e Instalar
 ```bash
 git clone https://github.com/ChatBot-Comodoro/saludsexual.git
-cd salud
+cd saludsexual
 npm install
 ```
 

@@ -70,7 +70,7 @@ npm --version
 ### **2. Clonar el repositorio**
 ```bash
 git clone https://github.com/yourusername/health-chatbot-platform.git
-cd health-chatbot-platform
+cd saludsexual
 ```
 
 ### **3. Instalar dependencias**
